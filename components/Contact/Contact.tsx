@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { showSuccessMessage } from "../../hooks/Toast";
@@ -10,15 +10,23 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [emailReceived, setEmailReceived] = useState(false);
 
   const handleSubmit = () => {
     showSuccessMessage("The email has been sent successfully.");
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+    setEmailReceived(true)
     scrollTo(0, 0);
   }
+
+  useEffect(() => {
+    if(emailReceived){
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+      setEmailReceived(false)
+    }
+  },[emailReceived])
  
   return (
     <div id="contact" className="w-full lg:h-screen pt-24 sm:pt-6">
@@ -93,7 +101,7 @@ const Contact = () => {
                   </div>
                   <div className="flex flex-col py-2">
                     <label className="uppercase text-sm py-2">Message</label>
-                    <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={10} name="name" required value={message} onChange={(e) => setMessage(e.target.value)} ></textarea>
+                    <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={10} name="message" required value={message} onChange={(e) => setMessage(e.target.value)} ></textarea>
                   </div>
                   <button className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-[#5651e5] to-[#709dff]" type="submit">Send Message</button>
                 </form>
