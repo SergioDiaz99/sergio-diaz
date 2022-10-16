@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import propertyImg from "../../public/assets/projects/property.jpg";
-import cryptoImg from "../../public/assets/projects/crypto.jpg";
+import dreamSound from "../../public/assets/projects/dreamSound.png";
 import netflixImg from "../../public/assets/projects/netflix.jpg";
 import twitchImg from "../../public/assets/projects/twitch.jpg";
 
@@ -18,9 +18,9 @@ const Projects = () => {
         <h2 className="py-4">{"What I've Build"}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
-            title="Netflix App"
-            backgroundImg={netflixImg}
-            projectUrl="/netflix"
+            title="Dream Sound"
+            backgroundImg={dreamSound}
+            projectUrl="/dream_sound"
             tech="React JS"
           />
           <ProjectItem
@@ -36,11 +36,12 @@ const Projects = () => {
             tech="React JS"
           />
           <ProjectItem
-            title="Crypto"
-            backgroundImg={cryptoImg}
-            projectUrl="/crypto"
+            title="Netflix App"
+            backgroundImg={netflixImg}
+            projectUrl="/netflix"
             tech="React JS"
           />
+
         </div>
       </div>
     </div>

@@ -5,26 +5,25 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
  import { useRouter } from 'next/router';
-import NavLogo from '../../public/assets/navLogo.png'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#fff');
+  const [navBg, setNavBg] = useState('#ffffff');
   const [linkColor, setLinkColor] = useState('#1f2937');
   const router = useRouter();
 
    useEffect(() => {
      if (
        router.asPath === '/property' ||
-       router.asPath === '/crypto' ||
+       router.asPath === '/dream_sound' ||
        router.asPath === '/netflix' ||
        router.asPath === '/twitch'
      ) {
        setNavBg('transparent');
        setLinkColor('#ecf0f3');
      } else {
-       setNavBg('#ecf0f3');
+       setNavBg('#ffffff');
        setLinkColor('#1f2937');
      }
    }, [router]);
@@ -56,13 +55,9 @@ const Navbar = () => {
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <Link href='/'>
           <a>
-            <Image
-              src={NavLogo}
-              alt='/'
-              width='125'
-              height='50'
-              className='cursor-pointer bg-transparent'
-            />
+            <h2 className='tracking-widest font-[900] text-[#5651e5]'>
+              SD
+            </h2>
           </a>
         </Link>
         <div>
@@ -80,10 +75,10 @@ const Navbar = () => {
               <Link href='/#projects'>Projects</Link>
             </li>
             <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/resume'>Resume</Link>
+              <Link href='/#contact'>Contact</Link>
             </li>
             <li className='ml-10 text-sm uppercase hover:border-b'>
-              <Link href='/#contact'>Contact</Link>
+              <a href='./diaz-sergio-cv.pdf' attributes-list download>Resume</a>
             </li>
           </ul>
           {/* Hamburger Icon */}
@@ -108,7 +103,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'
+              ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-full bg-[#ecf0f3] p-10 ease-in duration-500 '
               : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
           }
         >
@@ -116,12 +111,9 @@ const Navbar = () => {
             <div className='flex w-full items-center justify-between'>
               <Link href='/'>
                 <a>
-                  <Image
-                    src={NavLogo}
-                    width='87'
-                    height='35'
-                    alt='/'
-                  />
+                  <h2 className='tracking-widest font-[900] text-[#5651e5]'>
+                    SD
+                  </h2>
                 </a>
               </Link>
               <div
@@ -159,24 +151,19 @@ const Navbar = () => {
                   Projects
                 </li>
               </Link>
-              <Link href='/resume'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm'>
-                  Resume
-                </li>
-              </Link>
               <Link href='/#contact'>
                 <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Contact
                 </li>
               </Link>
             </ul>
-            <div className='pt-40'>
+            <div className='pt-20 flex flex-col'>
               <p className='uppercase tracking-widest text-[#5651e5]'>
                 Let&#39;s Connect
               </p>
               <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
                 <a
-                  href='https://www.linkedin.com/in/clint-briley-50056920a/'
+                  href='https://www.linkedin.com/in/diaz-sergio-software-developer/'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -185,7 +172,7 @@ const Navbar = () => {
                   </div>
                 </a>
                 <a
-                  href='https://github.com/fireclint'
+                  href='https://github.com/SergioDiaz99'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -199,14 +186,6 @@ const Navbar = () => {
                     className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
                   >
                     <AiOutlineMail />
-                  </div>
-                </Link>
-                <Link href='/resume'>
-                  <div
-                    onClick={() => setNav(!nav)}
-                    className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'
-                  >
-                    <BsFillPersonLinesFill />
                   </div>
                 </Link>
               </div>

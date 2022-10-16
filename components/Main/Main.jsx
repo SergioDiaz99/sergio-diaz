@@ -1,8 +1,9 @@
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import pdfIcon from "../../public/assets/pdf.svg";
 import Link from "next/link";
+import Image from "next/image";
 
 const Main = () => {
   return (
@@ -45,12 +46,7 @@ const Main = () => {
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <AiOutlineMail />
               </div>
-            </Link>
-            <Link href="/resume">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                <BsFillPersonLinesFill />
-              </div>
-            </Link>
+            </Link>            
           </div>
         </div>
       </div>
