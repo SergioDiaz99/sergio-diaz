@@ -103,7 +103,6 @@ const Contact = () => {
                     <label className="uppercase text-sm py-2">Message</label>
                     <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={10} name="message" required value={message} onChange={(e) => setMessage(e.target.value)} ></textarea>
                   </div>
-                  <input type="hidden" name="_next" value="https://sergio-diaz.vercel.app//thanks.html"></input>
                   <button className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-[#5651e5] to-[#709dff]" type="submit">Send Message</button>
                 </form>
               </div>
