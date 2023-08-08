@@ -26,7 +26,7 @@ const twitch = () => {
         <div className='col-span-4'>
           <p>Project</p>
           <h2>Overview</h2>
-          <p>
+          <p className='pt-4'>
             This appplication was built using NEXT.JS and is styled with
             Tailwind CSS. The application is hosted statically using Vercel.
             This is a mobile responsive recreation of Twitch.tv and features

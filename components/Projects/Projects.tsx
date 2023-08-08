@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import propertyImg from "../../public/assets/projects/property.jpg";
+import marusiaImg from "../../public/assets/projects/marusia.jpg";
 import dreamSound from "../../public/assets/projects/dreamSound.png";
 import netflixImg from "../../public/assets/projects/netflix.jpg";
 import twitchImg from "../../public/assets/projects/twitch.jpg";
@@ -30,10 +30,10 @@ const Projects = () => {
             tech="Next JS"
           />
           <ProjectItem
-            title="Property Finder"
-            backgroundImg={propertyImg}
-            projectUrl="/property"
-            tech="React JS"
+            title="Marusia - Real Estate"
+            backgroundImg={marusiaImg}
+            projectUrl="/marusia"
+            tech="Next JS"
           />
           <ProjectItem
             title="Netflix App"

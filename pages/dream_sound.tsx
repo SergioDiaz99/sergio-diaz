@@ -27,7 +27,7 @@ const dream_sound = () => {
         <div className='col-span-4'>
           <p>Project</p>
           <h2>Overview</h2>
-          <p>
+          <p className='pt-4'>
             I built this application in React JS and is hosted on Vercel.
             This application is pulling songs and artists
             data from the Shazam Core API and displaying different categories.
