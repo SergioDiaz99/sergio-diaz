@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import TuAlmacen from "../public/assets/projects/TuAlmacen.png";
+import TuAlmacenImage from "../public/assets/projects/TuAlmacen.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 
-const Tu_Almacen = () => {
+const TuAlmacen = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[50vh] relative">
@@ -13,7 +13,7 @@ const Tu_Almacen = () => {
           className="absolute z-1"
           layout="fill"
           objectFit="cover"
-          src={TuAlmacen}
+          src={TuAlmacenImage}
           alt="/"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
@@ -27,7 +27,7 @@ const Tu_Almacen = () => {
           <p>Project</p>
           <h2>Overview</h2>
           <p className="pt-4">
-            I developed this e-commerce website using Next.js for the frontend
+            {`I developed this e-commerce website using Next.js for the frontend
             framework, leveraging its server-side rendering capabilities for
             improved performance. I incorporated Tailwind CSS to streamline the
             styling process with utility-first CSS classes, ensuring responsive
@@ -35,7 +35,7 @@ const Tu_Almacen = () => {
             allowing efficient handling of the application's global state,
             especially in managing cart functionality, user sessions, and
             product data. The combination of these technologies resulted in a
-            fast, scalable, and maintainable web platform.
+            fast, scalable, and maintainable web platform.`}
           </p>
           <a href="https://tualmacen.com.ar/" target="_blank" rel="noreferrer">
             <button className="px-8 py-2 mt-4">Demo</button>
@@ -71,4 +71,4 @@ const Tu_Almacen = () => {
   );
 };
 
-export default Tu_Almacen;
+export default TuAlmacen;
