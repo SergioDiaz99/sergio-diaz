@@ -1,33 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { showSuccessMessage } from "../../hooks/Toast";
+import { showMessage, showSuccessMessage } from "../../hooks/Toast";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [emailReceived, setEmailReceived] = useState(false);
 
-  const handleSubmit = () => {
-    showSuccessMessage("The email has been sent successfully.");
-    setEmailReceived(true)
-    scrollTo(0, 0);
-  }
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    //showSuccessMessage("The email has been sent successfully.");
+    showMessage(
+      "There was an error trying to send the email. Plase send a Whatsapp message instead."
+    );
+    //setEmailReceived(true)
+    //scrollTo(0, 0);
+  };
 
   useEffect(() => {
-    if(emailReceived){
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-      setEmailReceived(false)
+    if (emailReceived) {
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setEmailReceived(false);
     }
-  },[emailReceived])
- 
+  }, [emailReceived]);
+
   return (
     <div id="contact" className="w-full lg:h-screen pt-24 sm:pt-6">
       <div className="max-w-[1240px] m-auto px-2 py-4 sm:py-16 md:pt-24 w-full">
@@ -75,7 +79,11 @@ const Contact = () => {
                       <FaGithub />
                     </div>
                   </a>
-                  <a href="mailto:diazsergioricardo99@gmail.com" target="_blank" rel="noreferrer">
+                  <a
+                    href="mailto:diazsergioricardo99@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <AiOutlineMail />
                     </div>
@@ -85,33 +93,66 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
-              <div className="p-4">
-                <form action="https://formsubmit.co/104d34fafc47c4719e37e080c3edbc08 " method="POST" target="_blank" onSubmit={handleSubmit}>
-                  <div className="flex flex-col">
-                      <label className="uppercase text-sm py-2">Name</label>
-                      <input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="name" required value={name} onChange={(e) => setName(e.target.value)} />
-                  </div>
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2">Email</label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
-                  </div>
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2">Subject</label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" name="subject" required value={subject} onChange={(e) => setSubject(e.target.value)} />
-                  </div>
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2">Message</label>
-                    <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={10} name="message" required value={message} onChange={(e) => setMessage(e.target.value)} ></textarea>
-                  </div>
-                  <button className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-[#5651e5] to-[#709dff]" type="submit">Send Message</button>
-                </form>
-              </div>
+            <div className="p-4">
+              <form onSubmit={handleSubmit}>
+                <div className="flex flex-col">
+                  <label className="uppercase text-sm py-2">Name</label>
+                  <input
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    type="text"
+                    name="name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col py-2">
+                  <label className="uppercase text-sm py-2">Email</label>
+                  <input
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    type="email"
+                    name="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col py-2">
+                  <label className="uppercase text-sm py-2">Subject</label>
+                  <input
+                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    type="text"
+                    name="subject"
+                    required
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col py-2">
+                  <label className="uppercase text-sm py-2">Message</label>
+                  <textarea
+                    className="border-2 rounded-lg p-3 border-gray-300"
+                    rows={10}
+                    name="message"
+                    required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  ></textarea>
+                </div>
+                <button
+                  className="w-full p-4 text-gray-100 mt-4 bg-gradient-to-r from-[#5651e5] to-[#709dff]"
+                  type="submit"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div className="flex justify-center py-12">
           <Link href="/">
             <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 animate-bounce">
-              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={25}/>
+              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={25} />
             </div>
           </Link>
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import marusiaImg from "../../public/assets/projects/marusia.jpg";
-import dreamSound from "../../public/assets/projects/dreamSound.png";
+import TuAlmacen from "../../public/assets/projects/TuAlmacen.png";
 import netflixImg from "../../public/assets/projects/netflix.jpg";
 import twitchImg from "../../public/assets/projects/twitch.jpg";
 
@@ -18,10 +18,10 @@ const Projects = () => {
         <h2 className="py-4">{"What I've Build"}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
-            title="Dream Sound"
-            backgroundImg={dreamSound}
-            projectUrl="/dream_sound"
-            tech="React JS"
+            title="Tu Almacen"
+            backgroundImg={TuAlmacen}
+            projectUrl="/tu_almacen"
+            tech="Next JS"
           />
           <ProjectItem
             title="Twitch UI"
