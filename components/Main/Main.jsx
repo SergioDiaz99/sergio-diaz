@@ -1,9 +1,5 @@
-import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import pdfIcon from "../../public/assets/pdf.svg";
-import Link from "next/link";
-import Image from "next/image";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Main = () => {
   return (
