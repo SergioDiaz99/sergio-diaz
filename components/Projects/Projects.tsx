@@ -4,6 +4,7 @@ import React from "react";
 import marusiaImg from "../../public/assets/projects/marusia.jpg";
 import TuAlmacen from "../../public/assets/projects/TuAlmacen.png";
 import netflixImg from "../../public/assets/projects/netflix.jpg";
+import nxtpImg from "../../public/assets/projects/nxtp-background.jpg";
 import twitchImg from "../../public/assets/projects/twitch.jpg";
 
 import ProjectItem from "./ProjectItem/ProjectItem";
@@ -36,9 +37,9 @@ const Projects = () => {
             tech="Next JS"
           />
           <ProjectItem
-            title="Netflix App"
-            backgroundImg={netflixImg}
-            projectUrl="/netflix"
+            title="Nxtp"
+            backgroundImg={nxtpImg}
+            projectUrl="/nxtp"
             tech="React JS"
           />
 
